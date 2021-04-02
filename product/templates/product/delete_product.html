@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 style="color: white;">You are about to delete this product, are you sure?</h1>
+<form style="color:#fff;" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a class="btn btn-outline-success" href="{% url 'detail' product.id %}" role="button">Cancel</a>
+
+
+</form>
+{% endblock %}
